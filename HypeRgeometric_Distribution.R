@@ -58,9 +58,9 @@ for (gene in 1:length(sample_list)){
     p53_cluster_count = sum(p53_list[,p]!="")
     
     #calculate the expected value 
-	  #NOTE: 433 is the total P53 sample IDs
+    #NOTE: 433 is the total P53 sample IDs
     
-    #update 01/09/2018
+    #update 01/09/2019
     #NOTE: 406 is the total P53 sample IDs after removing 9 repeative sample IDs and redudant sample IDs
     expected_intersect = (((p53_cluster_count)/(406))*(sample_count))
 
@@ -94,5 +94,4 @@ for (gene in 1:length(sample_list)){
 names(hyper.df) = c("Gene Name", "TP53 Cluster Name", "Total Samples", "Observed Intersect", "Expected Intersect", "Sample Count", "TP53 Cluster Count", "P-Value")
 
 #export the dataset to an output file
-#write.csv(hyper.df, "C:/Users/Jay/Desktop/Spring_2018/BNFO_697/Research_Project_Material/R/TCGA_LUSC_LUAD_Hypergeometric_Output.csv")
 write.csv(hyper.df, "TCGA_LUSC_LUAD_Hypergeometric_Output.csv")
